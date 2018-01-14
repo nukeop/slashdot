@@ -1,0 +1,2 @@
+# slashdot
+slashdot scraper
