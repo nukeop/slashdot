@@ -12,3 +12,28 @@ test('fetch article info', t => {
       t.fail();
     });
 });
+
+test('fetch comment', t=> {
+  return slashdot.getComment('https://linux.slashdot.org/comments.pl?sid=11610579&cid=55929905')
+    .then(comment => {
+      console.log(comment);
+      t.pass();
+    })
+    .catch(err => {
+      console.error(err);
+      t.fail();
+    });
+});
+
+test('fetch anonymous coward comment', t=> {
+  return slashdot.getComment('https://hardware.slashdot.org/comments.pl?sid=11610551&cid=55929715')
+    .then(comment => {
+      console.log(comment);
+      t.pass();
+    })
+    .catch(err => {
+      console.error(err);
+      t.fail();
+    });
+});
+
